@@ -1,6 +1,7 @@
 // This is version 1 of tsx where we dont have any props
 import React from "react";
 import "./App.css";
+import Card from "./components/Card/Card";
 const App: React.FC = () => {
   const HandleClick = () => {};
 
@@ -114,6 +115,12 @@ const App: React.FC = () => {
 
           <button onClick={handleClick}>Fetch Holidays</button>
         </div>
+
+        <Card
+          title="Card ho shaadi ka nahi birthday ka"
+          date="29/10/15"
+          holidayType="Bhai ka birthday hai"
+        ></Card>
       </div>
     </>
   );

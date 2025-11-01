@@ -27,7 +27,9 @@ const Card = ({ title, date, holidayType }: CardProps) => {
   return (
     <>
       <div className="card-container">
-        <h1>Public Holiday Tracker</h1>
+        <h2>{title}</h2>
+        <h3>{date}</h3>
+        <h3>{holidayType}</h3>
       </div>
     </>
   );
