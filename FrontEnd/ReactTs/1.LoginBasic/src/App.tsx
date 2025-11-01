@@ -1,52 +1,17 @@
 // ---- Version 1 when we are not getting props ----
 
-// import React, { useState } from "react";
-// import "./App.css";
-
-// const App: React.FC = () => {
-//   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-//   return (
-//     <>
-//       <div className="container">
-//         {isLoggedIn ? <h1>Welcome</h1> : <h1>Please login</h1>}
-
-//         <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
-//           {" "}
-//           {isLoggedIn ? "Logout" : "Login"}
-//         </button>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default App;
-
-// ---- Version 2 when we are getting props ----
-
 import React, { useState } from "react";
 import "./App.css";
 
-interface AppProps {
-  initialLoginState?: boolean;
-  welcomeMessage?: string;
-  loginMessage?: string;
-}
-
-const App = ({
-  initialLoginState = false,
-  welcomeMessage = "Welcome",
-  loginMessage = "Please login",
-}: AppProps) => {
-  // const [isLoggedIn, setIsLoggedIn] = useState<boolean>(initialLoginState);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean | null | undefined>(
-    false
-  ); //(YE UNION HAI)
+const App: React.FC = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   return (
     <>
       <div className="container">
-        {isLoggedIn ? <h1>{welcomeMessage}</h1> : <h1>{loginMessage}</h1>}
+        {isLoggedIn ? <h1>Welcome</h1> : <h1>Please login</h1>}
 
         <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+          {" "}
           {isLoggedIn ? "Logout" : "Login"}
         </button>
       </div>
@@ -55,6 +20,41 @@ const App = ({
 };
 
 export default App;
+
+// ---- Version 2 when we are getting props ----
+
+// import React, { useState } from "react";
+// import "./App.css";
+
+// interface AppProps {
+//   initialLoginState?: boolean;
+//   welcomeMessage?: string;
+//   loginMessage?: string;
+// }
+
+// const App = ({
+//   initialLoginState = false,
+//   welcomeMessage = "Welcome",
+//   loginMessage = "Please login",
+// }: AppProps) => {
+//   // const [isLoggedIn, setIsLoggedIn] = useState<boolean>(initialLoginState);
+//   const [isLoggedIn, setIsLoggedIn] = useState<boolean | null | undefined>(
+//     false
+//   ); //(YE UNION HAI)
+//   return (
+//     <>
+//       <div className="container">
+//         {isLoggedIn ? <h1>{welcomeMessage}</h1> : <h1>{loginMessage}</h1>}
+
+//         <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+//           {isLoggedIn ? "Logout" : "Login"}
+//         </button>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default App;
 
 // -----version 3:---- (direct using export interface and export const)
 
